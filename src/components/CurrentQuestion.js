@@ -31,7 +31,9 @@ export const CurrentQuestion = () => {
         onClick={() => {
           dispatch(quiz.actions.goToNextQuestion())
         }}>
-        Next question </button>}
+        Next question
+      </button>}
+      <p>{question.id}/8</p>
     </>
   )
 }
