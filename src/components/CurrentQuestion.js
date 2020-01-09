@@ -28,7 +28,7 @@ export const CurrentQuestion = () => {
         </button>
       ))}
       {answer && <h1> {answer.isCorrect ? 'Correct' : 'Wrong'}</h1>}
-      {answer && !isLastQuestion && <button
+      {/* {answer && !isLastQuestion && <button
         onClick={() => {
           dispatch(quiz.actions.goToNextQuestion())
         }}>
@@ -39,7 +39,7 @@ export const CurrentQuestion = () => {
           dispatch(quiz.actions.goToNextQuestion())
         }}>
         Submit
-      </button>}
+      </button>} */}
       <p>{question.id}/8</p>
     </>
   )
