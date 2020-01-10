@@ -13,7 +13,7 @@ export const Summary = () => {
   return (
     <div className='summary'>
       <h1>
-        You have got {correct} out of {questions.length}.
+        You have got {correct} out of {questions.length}!
       </h1>
       <iframe
         src='https://giphy.com/embed/3oKIPf3C7HqqYBVcCk'

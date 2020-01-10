@@ -46,7 +46,7 @@ const questions = [
   {
     id: 7,
     questionText: '"Show me the money!"',
-    options: ["Vanilla Sky", "Wolf of Wallstreet", "Top Gun", "Jerry Maguire"],
+    options: ["Vanilla Sky", "Wolf of Wall Street", "Top Gun", "Jerry Maguire"],
     correctAnswerIndex: 3
   },
   {
