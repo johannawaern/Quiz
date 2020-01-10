@@ -1,9 +1,18 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { quiz } from 'reducers/quiz';
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { quiz } from "reducers/quiz"
 
-export const CurrentQuestion = () => {
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
-  const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
-  const dispatch = useDispatch()
-  const isLastQuestion = useSelector((state) => state.quiz.questions.length - state.quiz.answers.length === 0)
+export const Summary = () => {
+  const answers = useSelector(state => state.quiz.answers)
+  const questions = useSelector(state => state.quiz.questions)
+  const correct = answers.filter(answer => answer.isCorrect).length
+
+  if (answers.length !== questions.length) {
+    return null
+  }
+  return (
+    <h1>
+      You have got {correct} out of {questions.length}. You are the worst!
+    </h1>
+  )
+}

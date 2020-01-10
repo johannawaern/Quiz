@@ -1,20 +1,14 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { quiz } from 'reducers/quiz';
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { quiz } from "reducers/quiz"
 
-export const CurrentQuestion = () => {
-  const question = useSelector((state) => state.quiz.questions[state.quiz.currentQuestionIndex])
-  const answer = useSelector((state) => state.quiz.answers.find((a) => a.questionId === question.id))
+export const StartQuiz = () => {
+  const question = useSelector(
+    state => state.quiz.questions[state.quiz.currentQuestionIndex]
+  )
+  const answer = useSelector(state =>
+    state.quiz.answers.find(a => a.questionId === question.id)
+  )
   const dispatch = useDispatch()
- 
-
-
-return (
-  <button
-  onClick={() => {
-    dispatch(quiz.actions.goToNextQuestion())
-  }}>
-  Start the quiz!
-</button>}
-)
+  return <h1>Welcome</h1>
 }

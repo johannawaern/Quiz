@@ -1,33 +1,34 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { quiz } from 'reducers/quiz';
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { quiz } from "reducers/quiz"
 
 export const NextOrSubmit = () => {
-	const isLastQuestion = useSelector((state) => state.quiz.questions.length - state.quiz.answers.length === 0);
-	const dispatch = useDispatch();
+  const isLastQuestion = useSelector(
+    state => state.quiz.questions.length - state.quiz.answers.length === 0
+  )
+  const dispatch = useDispatch()
+  console.log(isLastQuestion, "isLast")
+  if (isLastQuestion) {
+    return (
+      <button
+        type='button'
+        // onClick={() => {
+        // 	dispatch(Summary());
+        // }}
+      >
+        Submit
+      </button>
+    )
+  }
 
-	if (!isLastQuestion) {
-		return (
-			<button
-				type="button"
-				onClick={() => {
-					dispatch(quiz.actions.goToNextQuestion());
-				}}
-			>
-				Next question
-			</button>
-		);
-	}
-	if (isLastQuestion) {
-		return (
-			<button
-				type="button"
-				onClick={() => {
-					dispatch(quiz.actions.goToNextQuestion());
-				}}
-			>
-				Submit
-			</button>
-		);
-	}
-};
+  return (
+    <button
+      type='button'
+      onClick={() => {
+        dispatch(quiz.actions.goToNextQuestion())
+      }}
+    >
+      Next question
+    </button>
+  )
+}
