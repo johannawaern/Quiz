@@ -4,7 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { quiz } from 'reducers/quiz';
 
 import { CurrentQuestion } from 'components/CurrentQuestion';
-import NextOrSubmit from 'components/NextOrSubmit';
+import { NextOrSubmit } from 'components/NextOrSubmit';
 
 const reducer = combineReducers({
 	quiz: quiz.reducer
