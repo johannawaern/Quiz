@@ -11,8 +11,18 @@ export const Summary = () => {
     return null
   }
   return (
-    <h1>
-      You have got {correct} out of {questions.length}.
-    </h1>
+    <div className='summary'>
+      <h1>
+        You have got {correct} out of {questions.length}.
+      </h1>
+      <iframe
+        src='https://giphy.com/embed/3oKIPf3C7HqqYBVcCk'
+        width='480'
+        height='270'
+        frameBorder='0'
+        class='giphy-embed'
+        allowFullScreen
+      ></iframe>
+    </div>
   )
 }

@@ -7,10 +7,6 @@ export const NextOrSubmit = () => {
     state => state.quiz.questions.length - state.quiz.answers.length === 0
   )
   const dispatch = useDispatch()
-  console.log(isLastQuestion, "isLast")
-  if (isLastQuestion) {
-    return <button type='button'>Submit</button>
-  }
 
   return (
     <button
@@ -20,7 +16,7 @@ export const NextOrSubmit = () => {
         dispatch(quiz.actions.goToNextQuestion())
       }}
     >
-      Next question
+      {isLastQuestion ? "Submit" : "Next question"}
     </button>
   )
 }
