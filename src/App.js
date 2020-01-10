@@ -16,10 +16,11 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <StartQuiz />
-
-      <CurrentQuestion />
-      <Summary />
+      <div className='AppWrapper'>
+        <StartQuiz />
+        <CurrentQuestion />
+        <Summary />
+      </div>
     </Provider>
   )
 }

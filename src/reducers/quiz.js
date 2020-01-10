@@ -1,15 +1,65 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit"
 
 // Change these to your own questions!
 const questions = [
-  { id: 1, questionText: 'Question 1', options: ['Usain Bolt', 'Justin Gatlin', 'Tyson Gay', 'Asafa Powell'], correctAnswerIndex: 0 },
-  { id: 2, questionText: 'Question 2', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 3, questionText: 'Question 3', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 4, questionText: 'Question 4', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 5, questionText: 'Question 5', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 6, questionText: 'Question 6', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 7, questionText: 'Question 7', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 },
-  { id: 8, questionText: 'Question 8', options: ['2012', '2014', '2016', '2018'], correctAnswerIndex: 2 }
+  {
+    id: 1,
+    questionText: '"Wax on, wax off"',
+    options: ["Karate Kid", "Jumanji", "Rambo", "American Pie"],
+    correctAnswerIndex: 0
+  },
+  {
+    id: 2,
+    questionText: "We'll always have Paris",
+    options: [
+      "Amelie from Montmatre",
+      "Casablanca",
+      "Roman Holiday",
+      "Sliding Doors"
+    ],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 3,
+    questionText: "I'm having an old friend for dinner",
+    options: ["Terminator", "Dark Knight", "Joker", "Hannibal"],
+    correctAnswerIndex: 3
+  },
+  {
+    id: 4,
+    questionText: "I'll be back",
+    options: ["Rocky", "Iron Man 3", "Star Wars", "Terminator"],
+    correctAnswerIndex: 3
+  },
+  {
+    id: 5,
+    questionText: "I'm the king of the world",
+    options: ["Lord of the Rings", "Titanic", "Lion King", "Shrek"],
+    correctAnswerIndex: 1
+  },
+  {
+    id: 6,
+    questionText: "Nobody puts Baby in a corner",
+    options: ["Wall-E", "Mamma Mia", "Dirty Dancing", "Grease"],
+    correctAnswerIndex: 2
+  },
+  {
+    id: 7,
+    questionText: "Show me the money!",
+    options: ["Vanilla Sky", "Wolf of Wallstreet", "Top Gun", "Jerry Maguire"],
+    correctAnswerIndex: 3
+  },
+  {
+    id: 8,
+    questionText: "You shall not pass",
+    options: [
+      "Star Wars",
+      "The Princess Bride",
+      "Harry Potter",
+      "Lord of the Rings"
+    ],
+    correctAnswerIndex: 2
+  }
 ]
 
 const initialState = {
@@ -20,10 +70,9 @@ const initialState = {
 }
 
 export const quiz = createSlice({
-  name: 'quiz',
+  name: "quiz",
   initialState,
   reducers: {
-
     /**
      * Use this action when a user selects an answer to the question.
      * The answer will be stored in the `quiz.answers` state with the
@@ -41,14 +90,18 @@ export const quiz = createSlice({
      */
     submitAnswer: (state, action) => {
       const { questionId, answerIndex } = action.payload
-      const question = state.questions.find((q) => q.id === questionId)
+      const question = state.questions.find(q => q.id === questionId)
 
       if (!question) {
-        throw new Error('Could not find question! Check to make sure you are passing the question id correctly.')
+        throw new Error(
+          "Could not find question! Check to make sure you are passing the question id correctly."
+        )
       }
 
       if (question.options[answerIndex] === undefined) {
-        throw new Error(`You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`)
+        throw new Error(
+          `You passed answerIndex ${answerIndex}, but it is not in the possible answers array!`
+        )
       }
 
       state.answers.push({
@@ -67,7 +120,7 @@ export const quiz = createSlice({
      *
      * This action does not require a payload.
      */
-    goToNextQuestion: (state) => {
+    goToNextQuestion: state => {
       if (state.currentQuestionIndex + 1 === state.questions.length) {
         state.quizOver = true
       } else {
@@ -85,6 +138,5 @@ export const quiz = createSlice({
     restart: () => {
       return initialState
     }
-
   }
 })

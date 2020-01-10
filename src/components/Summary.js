@@ -12,7 +12,7 @@ export const Summary = () => {
   }
   return (
     <h1>
-      You have got {correct} out of {questions.length}. You are the worst!
+      You have got {correct} out of {questions.length}.
     </h1>
   )
 }

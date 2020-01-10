@@ -19,27 +19,30 @@ export const CurrentQuestion = () => {
 
   return (
     <>
-      <h1>Question: {question.questionText}</h1>
-      {question.options.map((option, index) => (
-        <button
-          onClick={() => {
-            if (!answer) {
-              dispatch(
-                quiz.actions.submitAnswer({
-                  questionId: question.id,
-                  answerIndex: index
-                })
-              )
-            }
-          }}
-          key={option}
-        >
-          {option}
-        </button>
-      ))}
+      <h2 className='question'>{question.questionText}</h2>
+      <div className='answerWrapper'>
+        {question.options.map((option, index) => (
+          <button
+            className='answerButton'
+            onClick={() => {
+              if (!answer) {
+                dispatch(
+                  quiz.actions.submitAnswer({
+                    questionId: question.id,
+                    answerIndex: index
+                  })
+                )
+              }
+            }}
+            key={option}
+          >
+            {option}
+          </button>
+        ))}
+      </div>
+      <p className='progress'>{question.id}/8</p>
       {answer && <h1> {answer.isCorrect ? "Correct" : "Wrong"}</h1>}
       {answer && <NextOrSubmit />}
-      <p>{question.id}/8</p>
     </>
   )
 }

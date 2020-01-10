@@ -9,21 +9,13 @@ export const NextOrSubmit = () => {
   const dispatch = useDispatch()
   console.log(isLastQuestion, "isLast")
   if (isLastQuestion) {
-    return (
-      <button
-        type='button'
-        // onClick={() => {
-        // 	dispatch(Summary());
-        // }}
-      >
-        Submit
-      </button>
-    )
+    return <button type='button'>Submit</button>
   }
 
   return (
     <button
       type='button'
+      className='nextSubmitButton'
       onClick={() => {
         dispatch(quiz.actions.goToNextQuestion())
       }}
