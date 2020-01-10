@@ -10,7 +10,7 @@ const questions = [
   },
   {
     id: 2,
-    questionText: "We'll always have Paris",
+    questionText: '"We will always have Paris"',
     options: [
       "Amelie from Montmatre",
       "Casablanca",
@@ -21,37 +21,37 @@ const questions = [
   },
   {
     id: 3,
-    questionText: "I'm having an old friend for dinner",
+    questionText: '"I am having an old friend for dinner"',
     options: ["Terminator", "Dark Knight", "Joker", "Hannibal"],
     correctAnswerIndex: 3
   },
   {
     id: 4,
-    questionText: "I'll be back",
+    questionText: '"Ill be back"',
     options: ["Rocky", "Iron Man 3", "Star Wars", "Terminator"],
     correctAnswerIndex: 3
   },
   {
     id: 5,
-    questionText: "I'm the king of the world",
+    questionText: '"I am the king of the world"',
     options: ["Lord of the Rings", "Titanic", "Lion King", "Shrek"],
     correctAnswerIndex: 1
   },
   {
     id: 6,
-    questionText: "Nobody puts Baby in a corner",
+    questionText: '"Nobody puts Baby in a corner"',
     options: ["Wall-E", "Mamma Mia", "Dirty Dancing", "Grease"],
     correctAnswerIndex: 2
   },
   {
     id: 7,
-    questionText: "Show me the money!",
+    questionText: '"Show me the money!"',
     options: ["Vanilla Sky", "Wolf of Wallstreet", "Top Gun", "Jerry Maguire"],
     correctAnswerIndex: 3
   },
   {
     id: 8,
-    questionText: "You shall not pass",
+    questionText: '"You shall not pass"',
     options: [
       "Star Wars",
       "The Princess Bride",

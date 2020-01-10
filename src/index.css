@@ -15,7 +15,7 @@ code {
 }
 
 .AppWrapper {
-  margin: 0 auto;
+  margin: 100px auto;
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@ code {
   padding: 40px;
   border-radius: 15px;
   margin: 10px;
-  background-color: lightblue;
+  background-color: rgb(60, 245, 236);
   font-size: 1em;
   font-family: "roboto", sans-serif;
   display: flex;
@@ -55,7 +55,7 @@ code {
 
 .question {
   font-family: "droid sans";
-  margin-top: 20px;
+  margin: 20px 0 40px;
 }
 
 .progress {
@@ -64,8 +64,11 @@ code {
 }
 
 .summary {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+iframe {
+  margin-top: 25px;
 }

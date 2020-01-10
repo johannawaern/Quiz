@@ -41,7 +41,7 @@ export const CurrentQuestion = () => {
         ))}
       </div>
       <p className='progress'>{question.id}/8</p>
-      {answer && <h1> {answer.isCorrect ? "Correct" : "Wrong"}</h1>}
+      {answer && <h1> {answer.isCorrect ? "😄 👍" : "😣 👎"}</h1>}
       {answer && <NextOrSubmit />}
     </>
   )
