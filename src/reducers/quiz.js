@@ -55,8 +55,8 @@ const questions = [
     options: [
       "Star Wars",
       "The Princess Bride",
-      "Harry Potter",
-      "Lord of the Rings"
+      "Lord of the Rings",
+      "Harry Potter"
     ],
     correctAnswerIndex: 2
   }
