@@ -1,10 +1,10 @@
-import React from "react"
-import { useSelector, useDispatch } from "react-redux"
-import { quiz } from "reducers/quiz"
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { quiz } from 'reducers/quiz'
 
 export const NextOrSubmit = () => {
   const isLastQuestion = useSelector(
-    state => state.quiz.questions.length - state.quiz.answers.length === 0
+    (state) => state.quiz.questions.length - state.quiz.answers.length === 0
   )
   const dispatch = useDispatch()
 
@@ -14,9 +14,8 @@ export const NextOrSubmit = () => {
       className='nextSubmitButton'
       onClick={() => {
         dispatch(quiz.actions.goToNextQuestion())
-      }}
-    >
-      {isLastQuestion ? "Submit" : "Next question"}
+      }}>
+      {isLastQuestion ? 'Submit' : 'Next question'}
     </button>
   )
 }
